@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment 5, Part 2 - Calculator</title>
+<script>
+    window.addEventListener('load', init); 
+    
+    // INIT FUNTION
+//    function init() {
+//        document.getElementById('seven').addEventListener('click', enter);
+//        document.getElementById('eight').addEventListener('click', enter);
+//        document.getElementById('nine').addEventListener('click', enter);
+//        document.getElementById('divide').addEventListener('click', enter);
+//        document.getElementById('four').addEventListener('click', enter);
+//        document.getElementById('five').addEventListener('click', enter);
+//        document.getElementById('six').addEventListener('click', enter);
+//        document.getElementById('multiply').addEventListener('click', enter);
+//        document.getElementById('one').addEventListener('click', enter);
+//        document.getElementById('two').addEventListener('click', enter);
+//        document.getElementById('three').addEventListener('click', enter);
+//        document.getElementById('subtract').addEventListener('click', enter);
+//        document.getElementById('zero').addEventListener('click', enter);
+//        document.getElementById('period').addEventListener('click', enter);
+//        document.getElementById('add').addEventListener('click', enter);      
+//        document.getElementById('equal').addEventListener('click', calculate);
+//    }
+    
+    // INIT FUNCTION -- SIMPLIFIED VERSION
+    function init() {
+        // from 'seven' to 'add' button
+        var buttonArray = document.getElementsByClassName('calculatorButton');
+        for (i = 0; i < buttonArray.length; i++) {
+            buttonArray[i].addEventListener('click', enter);
+        }
+        // 'equal' button
+        document.getElementById('equal').addEventListener('click', calculate);
+    }
+    
+    
+    // ENTER FUNCTION
+    function enter(event) { // event(=event object)
+        document.getElementById('result').value += event.target.value; // Among properties of event object, get "target(=what element did you click?)"
+    }
+    
+    // CALCULATE FUNCTION
+    function calculate() {
+        document.getElementById('result').value = eval(document.getElementById('result').value); 
+    }
+    
+</script>
+</head>
+
+    
+    
+    
+    
+    
+    
+<body>
+	<input type="text" readonly id="result" />
+    <br>
+    <input type="button"  class="calculatorButton" id="seven" value="7">
+    <input type="button"  class="calculatorButton"id="eight" value="8">
+    <input type="button"  class="calculatorButton"id="nine" value="9">
+    <input type="button"  class="calculatorButton"id="divide" value="/">
+    <br>
+    <input type="button"  class="calculatorButton"id="four" value="4">
+    <input type="button"  class="calculatorButton"id="five" value="5">
+    <input type="button"  class="calculatorButton"id="six" value="6">
+    <input type="button"  class="calculatorButton"id="multiply" value="*">
+    <br>
+    <input type="button"  class="calculatorButton"id="one" value="1">
+    <input type="button"  class="calculatorButton"id="two" value="2">
+    <input type="button"  class="calculatorButton"id="three" value="3">
+    <input type="button"  class="calculatorButton"id="subtract" value="-">
+    <br>
+    <input type="button"  class="calculatorButton"id="zero" value="0">
+    <input type="button"  class="calculatorButton"id="period" value=".">
+    <input type="button"  class="calculatorButton"id="add" value="+">
+    <input type="button" id="equal" value="=">
+</body>
+</html>
